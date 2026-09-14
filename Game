@@ -1,0 +1,54 @@
+import random
+name=input('''		Hello and welcome to your very own epic RPG game!!
+		To start, please enter your name below
+
+:-''')
+
+clas=int(input(f'''
+		Alright {name}, now its time to pick your class!
+You have 3 options:
+1) Warrior		(balanced character)
+2) Mage		(high dmaage, low health)
+3) Tank		(low damage, high health)
+To choose a character, enter its number below!
+
+==>'''))
+
+if clas==1:
+	a=input(f'''Alright {name}, you have chosen the Warrior class!
+are you ready to go onto your amazing journey? (yes/no)
+==>''')
+	if a=="yes":
+		print("Alright then lets start!")
+		player={
+		"name":name,
+		"class":"Warrior",
+		"health":75,
+		"damage":75,
+		"health potions":3
+		}
+		print(f"here's a breakdown of your current inventory:-")
+		for x, y in player.items():
+			print(f"{x}:{y}")
+		while True:
+		
+			b=int(input(f'''
+Now, {name}, Heres a few things you can do right now
+
+1) Fight a zombie (earn money)
+2) use a health potion (heal all your hp)
+3) use a damage potion (boost damage by 25%)
+4) open the shop
+5) view inventory
+6) quit'''))
+
+			if b==1:
+				c=random.randint(10,50)
+				d=c*2
+				player["health"]=player["health"]-c
+				print(f"you fought and lost...{c} health! current hp={player['health']}")
+				print(f"you earned ${d}")
+
+			elif b==2:
+	else:
+		print("Bye, hope to see you soon!")
